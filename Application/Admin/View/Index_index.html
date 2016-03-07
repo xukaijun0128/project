@@ -1,0 +1,52 @@
+<include file='Public:head' />
+<css href='__CSS__/style.css' />
+<!--header-->
+<header>
+ <h1><image src="__IMG__/admin_logo.png" /></h1>
+ <ul class="rt_nav">
+  <li><a href="" target="_blank" class="website_icon">站点首页</a></li>
+  <li><a href="#" class="admin_icon">DeathGhost</a></li>
+  <li><a href="#" class="set_icon">账号设置</a></li>
+  <li><a href="login.php" class="quit_icon">安全退出</a></li>
+ </ul>
+</header>
+
+<!--aside nav-->
+<aside class="lt_aside_nav content mCustomScrollbar" >
+<h2><a >起始页</a></h2>
+<ul>
+    <li>
+        <dl>
+            <dt>系统设置</dt>
+            <dd><a class="active" toWhere='System/config'>系统基本参数</a></dd>
+            <dd><a >系统用户管理</a></dd>
+            <dd><a >登陆信息</a></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+            <dt>商品管理</dt>
+            <dd><a >商品分类</a></dd>
+            <dd><a >商品添加</a></dd>
+            <dd><a >商品删除</a></dd>
+            <dd><a >商品展示/下架</a></dd>
+        </dl>
+    </li>
+    <li>
+        <dl>
+            <dt>新闻管理</dt>
+            <dd><a >添加新闻</a></dd>
+            <dd><a >删除新闻</a></dd>
+            <dd><a >新闻显示/下架</a></dd>
+        </dl>
+    </li>
+ </ul>
+</aside>
+
+<section class="rt_wrap content mCustomScrollbar">
+    <iframe id="Main" name='Main' frameborder="false" src={:U('Admin/System/config')} scrolling="auto" allowtransparency="true">
+        
+    </iframe>
+</section>
+
+<include file='Public:foot' />

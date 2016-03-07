@@ -1,0 +1,14 @@
+* {
+    margin: 0px auto;
+}
+.systemTable {
+    width: 60%;
+    margin: 15px auto;
+}
+.systemTable th,td {
+    text-align: center
+}
+
+.set {
+    text-align: center
+}
