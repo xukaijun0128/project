@@ -12,11 +12,13 @@ class SystemController extends BaseController {
 	}
 
     public function editConfig(){
-        $data = $_GET;
-        $config = array();
-        print_r($data);
+        $data = $_GET['data'];
+        $data = json_decode($data, true);
+        
         foreach ($data as $k => $v) {
-            $this->Config->save($config);
+            $this->Config->save($v);
         }
+
+        $this->ajaxReturn(true);
 	}
 }

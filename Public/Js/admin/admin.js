@@ -10,7 +10,18 @@ var systemConfig = Backbone.View.extend({
         this.render();
     },
     render: function() {
-        this.getConfig();
+        var _this = this;
+        $.each(_this.getConfig(), function(k,v) {
+            _this.table.append(
+                "<tr>" +
+                    "<td style='width:265px;'>" +
+                        "<div class='cut_title ellipsis'>" + v.parameter + "</div>" +
+                    "</td>" +
+                    "<td class='info'><input type='text' value="+v.value+" id="+v.id+"></td>" +
+                    "<td>"+ v.variable +"</td>" +
+                "</tr>"
+            );
+        });
     },
     getConfigInfo: function() {
         
@@ -34,15 +45,15 @@ var systemConfig = Backbone.View.extend({
                 datas.push(data);
             }
         });
-        console.log(datas);
+        datas = JSON.stringify(datas);
         $.ajax({
             type: "GET",
             url: '/admin/System/editConfig',
             async: false,
-            data: datas,
+            data: {data: datas},
             dataType: "json",
             success: function(data) {
-                console.log(data);
+                alert('修改成功');
             }
         });
     },
@@ -50,26 +61,17 @@ var systemConfig = Backbone.View.extend({
         
     },
     getConfig: function() {
-        var _this = this;
+        var configData = [];
         $.ajax({
             type: "GET",
             url: '/admin/System/getConfig',
             async: false,
             dataType: "json",
             success: function(data) {
-                $.each(data, function(k,v) {
-                    _this.table.append(
-                        "<tr>" +
-                            "<td style='width:265px;'>" +
-                                "<div class='cut_title ellipsis'>" + v.parameter + "</div>" +
-                            "</td>" +
-                            "<td class='info'><input type='text' value='" + v.value + "'id="+v.id+"></td>" +
-                            "<td>"+ v.variable +"</td>" +
-                        "</tr>"
-                    )
-                })
+                configData = data;
             }
         });
+        return configData;
     }
 
 });
