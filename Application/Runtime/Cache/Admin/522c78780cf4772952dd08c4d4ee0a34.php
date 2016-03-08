@@ -12,9 +12,7 @@
         </tr>
     </table>
     <div class='set'>
-        <button href="#" class="inner_btn add">添加信息</button>
         <button href="#" class="inner_btn edit">修改</button>
-        <button href="#" class="inner_btn reset">重置</button>
     </div>
     <div class='dialog'></div>
 </div>

@@ -10,7 +10,7 @@ class SystemController extends BaseController {
     public function getConfig(){
         $this->ajaxReturn($this->Config->select());
 	}
-
+    
     public function editConfig(){
         $data = $_GET['data'];
         $data = json_decode($data, true);

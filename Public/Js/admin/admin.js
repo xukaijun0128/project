@@ -1,15 +1,15 @@
 var exports = {
     tpl: _.template(
-                '<% _.each(config, function(item) {%>' +
-                '<tr>' +
-                    '<td style="width:265px">' +
-                        '<div class="cut_title ellipsis"><%= item.parameter %></div>' +
-                    '</td>' +
-                    '<td class="info"><input type="text" value=<%= item.value %> id=<%= item.id %>>' +
-                    '</td>' +
-                    '<td><%= item.variable %></td>' +
-                '</tr>' +
-              '<% }) %>'
+        '<% _.each(config, function(item) {%>' +
+        '<tr>' +
+            '<td style="width:265px">' +
+                '<div class="cut_title ellipsis"><%= item.parameter %></div>' +
+            '</td>' +
+            '<td class="info"><input type="text" value=<%= item.value %> id=<%= item.id %>>' +
+            '</td>' +
+            '<td><%= item.variable %></td>' +
+        '</tr>' +
+      '<% }) %>'
     ),
     editAjax: function(data) {
         $.ajax({
@@ -40,25 +40,15 @@ var exports = {
         table: {},
         el: $('#systemDiv'),
         events: {
-            'click .add': 'addInfo',
             'click .edit': 'editInfo',
-            'click .reset': 'resetInfo'
         },
         initialize: function() {
-            var tap = '<h1><%=width%></h1>';
-            this.$el.append(_.template(tap, {width: '我的个大擦'}));
             this.table = this.$('.systemTable');
             this.render();
         },
         render: function() {
             var _this = this;
             _this.table.append(exports.tpl({config: exports.getConfig()}));
-        },
-        getConfigInfo: function() {
-
-        },
-        addInfo: function() {
-
         },
         editInfo: function() {
             var _this = this,
@@ -78,10 +68,6 @@ var exports = {
             });
             exports.editAjax(JSON.stringify(datas));
         },
-        resetInfo: function() {
-
-        },
-        
     })
 };
 

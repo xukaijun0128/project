@@ -32,26 +32,26 @@
     <li>
         <dl>
             <dt>系统设置</dt>
-            <dd><a class="active" toWhere='System/config'>系统基本参数</a></dd>
-            <dd><a >系统用户管理</a></dd>
-            <dd><a >登陆信息</a></dd>
+            <dd><a class="active" toWhere="<?php echo U('Admin/System/config');?>">系统基本参数</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/System/user');?>">系统用户管理</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/System/loginInfo');?>">登陆信息</a></dd>
         </dl>
     </li>
     <li>
         <dl>
             <dt>商品管理</dt>
-            <dd><a >商品分类</a></dd>
-            <dd><a >商品添加</a></dd>
-            <dd><a >商品删除</a></dd>
-            <dd><a >商品展示/下架</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/Goods/category');?>">商品分类</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/Goods/add');?>">商品添加</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/Goods/delete');?>">商品删除</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/Goods/isShow');?>">商品展示/下架</a></dd>
         </dl>
     </li>
     <li>
         <dl>
             <dt>新闻管理</dt>
-            <dd><a >添加新闻</a></dd>
-            <dd><a >删除新闻</a></dd>
-            <dd><a >新闻显示/下架</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/News/add');?>">添加新闻</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/News/delete');?>">删除新闻</a></dd>
+            <dd><a toWhere="<?php echo U('Admin/News/isShow');?>">新闻显示/下架</a></dd>
         </dl>
     </li>
  </ul>
@@ -70,6 +70,6 @@
     <script type="text/javascript" src="/Public/Js/backbone.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="/Public/Bs/js/bootstrap.min.js"></script>
-    
+    <script type="text/javascript" src="/Public/Js/admin/changeSrc.js"></script>
   </body>
 </html>
