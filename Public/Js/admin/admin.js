@@ -1,5 +1,5 @@
 var systemConfig = Backbone.View.extend({
-    el: $('#Main').contents().find('#systemDiv'),
+    el: $('#systemDiv'),
     events: {
         'click .add': 'addInfo',
         'click .edit': 'editInfo',

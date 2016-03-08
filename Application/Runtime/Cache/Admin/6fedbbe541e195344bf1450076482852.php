@@ -68,7 +68,6 @@
     <script type="text/javascript" src="/Public/Js/jquery-ui/jquery-ui.min.js"></script>
     <script type="text/javascript" src="/Public/Js/underscore.js"></script>
     <script type="text/javascript" src="/Public/Js/backbone.js"></script>
-    <script type="text/javascript" src="/Public/Js/admin/admin.js"></script>
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script type="text/javascript" src="/Public/Bs/js/bootstrap.min.js"></script>
     
