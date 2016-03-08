@@ -201,9 +201,21 @@ header .rt_nav li .quit_icon:before{content:"Q";}
 }
 
 .lt_aside_nav {
-    overflow: auto；
+    overflow-y:auto;
+}
+
+#Main {
+    overflow-y:auto;
 }
 
 .lt_aside_nav ul dd{
     cursor: pointer;
+}
+
+.userTable .lastLoginTop {
+    border-bottom: 1px solid black;
+}
+
+.clear {
+    margin-top: 10px;
 }

@@ -1,22 +1,22 @@
 var exports = {
     tpl: _.template($('#tpl_user').html()),
-    editAjax: function(data) {
+    deleteAjax: function(num) {
         $.ajax({
             type: "GET",
-            url: '/admin/System/editConfig',
+            url: '/admin/System/deleteLog',
             async: false,
-            data: {data: data},
+            data: {num: num},
             dataType: "json",
             success: function() {
-                alert('修改成功');
+                alert('删除成功');
             }
         });
     },
-    getUser: function() {
+    getLog: function() {
         var configData = [];
         $.ajax({
             type: "GET",
-            url: '/admin/System/getUser',
+            url: '/admin/System/getlog',
             async: false,
             dataType: "json",
             success: function(data) {
@@ -25,11 +25,11 @@ var exports = {
         });
         return configData;
     },
-    systemUser: Backbone.View.extend({
+    systemLog: Backbone.View.extend({
         table: {},
         el: $('#systemUser'),
         events: {
-            
+            'click .clear': 'clearLog'
         },
         initialize: function() {
             this.table = this.$('.userTable');
@@ -37,9 +37,13 @@ var exports = {
         },
         render: function() {
             var _this = this;
-            this.table.append(exports.tpl({config: exports.getUser()}));
+            this.table.append(exports.tpl({config: exports.getLog()}));
+        },
+        clearLog: function(e) {
+            var num = $(e.target).attr('num');
+            exports.deleteAjax(num);
         }
     })
 };
 
-new exports.systemUser;
+new exports.systemLog;

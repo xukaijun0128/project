@@ -8,11 +8,14 @@
         <tr>
          <th>id</th>
          <th>登陆名</th>
-         <th>会员属性</th>
-         <th>最后登录</th>
-         <th>操作</th>
+         <th>ip地址</th>
+         <th>登录时间</th>
         </tr>
     </table>
+    <div class='set'>
+        <button href="#" class="inner_btn clear" num = 5>清除后5条</button>
+        <button href="#" class="inner_btn clear" num = 10>清除后10条</button>
+    </div>
 </div>
  <script type="text/template" id="tpl_user">
     <% _.each(config, function(item) {%>
@@ -20,24 +23,14 @@
             <td>
                 <%= item.id %>
             </td>
-            <td class="info"><%= item.username %>
+            <td><%= item.username %>
             </td>
             <td>
-                <% if ( +item.type === 1) { %>
-                <%= '超级管理员'%>
-                <% } else {%>
-                <%= '普通管理员'%>
-                <% } %>
+                <%= item.loginip%>
             </td>
             <td>
-                <div class='lastLoginTop'>
-                    <%= item.logintime %>
-                </div>
-                <div>
-                    <%= item.loginip %>
-                </div>
+                <%= item.logintime%>
             </td>
-            <td>操作</td>
         </tr>
       <% }) %>
 </script>
@@ -45,6 +38,6 @@
 <script type="text/javascript" src="/Public/Js/jquery-ui/jquery-ui.min.js"></script>
 <script type="text/javascript" src="/Public/Js/underscore.js"></script>
 <script type="text/javascript" src="/Public/Js/backbone.js"></script>
-<script type="text/javascript" src="/Public/Js/admin/user.js"></script>
+<script type="text/javascript" src="/Public/Js/admin/loginInfo.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script type="text/javascript" src="/Public/Bs/js/bootstrap.min.js"></script>
