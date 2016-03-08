@@ -58,7 +58,7 @@
 </aside>
 
 <section class="rt_wrap content mCustomScrollbar">
-    <iframe id="Main" name='Main' frameborder="false" src=<?php echo U('Admin/System/config');?> scrolling="auto" allowtransparency="true">
+    <iframe id="Main" name='Main' frameborder="false" src="<?php echo U('Admin/System/config');?>" scrolling="auto" allowtransparency="true">
         
     </iframe>
 </section>

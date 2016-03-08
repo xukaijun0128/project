@@ -201,5 +201,9 @@ header .rt_nav li .quit_icon:before{content:"Q";}
 }
 
 .lt_aside_nav {
-    overflow: auto
+    overflow: auto；
+}
+
+.lt_aside_nav ul dd{
+    cursor: pointer;
 }

@@ -21,4 +21,8 @@ class SystemController extends BaseController {
 
         $this->ajaxReturn(true);
 	}
+
+    public function user() {
+        $this->show();
+    }
 }
