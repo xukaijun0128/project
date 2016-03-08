@@ -10,8 +10,34 @@ var exports = {
                     '<td><%= item.variable %></td>' +
                 '</tr>' +
               '<% }) %>'
-        ),
+    ),
+    editAjax: function(data) {
+        $.ajax({
+            type: "GET",
+            url: '/admin/System/editConfig',
+            async: false,
+            data: {data: data},
+            dataType: "json",
+            success: function() {
+                alert('修改成功');
+            }
+        });
+    },
+    getConfig: function() {
+        var configData = [];
+        $.ajax({
+            type: "GET",
+            url: '/admin/System/getConfig',
+            async: false,
+            dataType: "json",
+            success: function(data) {
+                configData = data;
+            }
+        });
+        return configData;
+    },
     systemConfig: Backbone.View.extend({
+        table: {},
         el: $('#systemDiv'),
         events: {
             'click .add': 'addInfo',
@@ -26,7 +52,7 @@ var exports = {
         },
         render: function() {
             var _this = this;
-            _this.table.append(exports.tpl({config: _this.getConfig()}));
+            _this.table.append(exports.tpl({config: exports.getConfig()}));
         },
         getConfigInfo: function() {
 
@@ -50,34 +76,12 @@ var exports = {
                     datas.push(data);
                 }
             });
-            datas = JSON.stringify(datas);
-            $.ajax({
-                type: "GET",
-                url: '/admin/System/editConfig',
-                async: false,
-                data: {data: datas},
-                dataType: "json",
-                success: function(data) {
-                    alert('修改成功');
-                }
-            });
+            exports.editAjax(JSON.stringify(datas));
         },
         resetInfo: function() {
 
         },
-        getConfig: function() {
-            var configData = [];
-            $.ajax({
-                type: "GET",
-                url: '/admin/System/getConfig',
-                async: false,
-                dataType: "json",
-                success: function(data) {
-                    configData = data;
-                }
-            });
-            return configData;
-        }
+        
     })
 };
 
